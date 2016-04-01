@@ -1,0 +1,22 @@
+// Write a method that takes a string and returns true if it is a palindrome. 
+// A palindrome is a string that is the same whether written backward or forward. 
+// Assume that there are no spaces; only lowercase letters will be given.
+// Difficulty: easy.
+
+function palindrome(string) {
+  var arr = string.split("");
+  for(var i = 0; i < Math.floor(arr.length / 2); i++) {
+    if(arr[i] !== arr[arr.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// These are tests to check that your code is working. After writing your solution, they should all print true.
+
+console.log("===============================================");
+    console.log(palindrome("abc") === false);
+    console.log(palindrome("abcba") === true);
+    console.log(palindrome("z") === true);
+console.log("===============================================");
