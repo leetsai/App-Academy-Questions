@@ -1,0 +1,20 @@
+// Write a method that will take a string as input, and return a new string with the same letters in reverse order.
+// Don't use String's reverse method; that would be too simple.
+// Difficulty: easy
+
+function reverse(str) {
+  var arr = str.split("");
+  var newArr = [];
+  for(var i = arr.length - 1; i >= 0; i--) {
+    newArr.push(arr[i]);
+  }
+  return newArr.join("");
+}
+
+// These are tests to check that your code is working. After writing your solution, they should all print true.
+
+console.log("===============================================");
+console.log(reverse("abc") == "cba");
+console.log(reverse("a") == "a");
+console.log(reverse("") === "");
+console.log("===============================================");
