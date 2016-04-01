@@ -8,7 +8,7 @@ function factorial(n) {
   if(n <= 1) {
     return 1;
   } else {
-  	product *= factorial(n - 1);
+    product *= factorial(n - 1);
   }
   return product;
 }
