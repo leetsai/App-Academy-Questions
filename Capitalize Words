@@ -4,6 +4,7 @@
 
 // Difficulty: medium.
 
+/*
 function capitalize_words(string) {
   var arr = string.split(" ");
   var newArr = [];
@@ -17,6 +18,19 @@ function capitalize_words(string) {
     }
   }
   return newArr.join("").trim();
+}
+*/
+
+//my unofficial official solution
+function capitalize_words(string) {
+  var arr = string.split(" ");
+  var index = 0;
+  while(index < arr.length) {
+    var word = arr[index];
+    arr[index] = word[0].toUpperCase() + word.slice(1);
+    index++;
+  }
+  return arr.join(" ");
 }
 
 // These are tests to check that your code is working. After writing your solution, they should all print true.
