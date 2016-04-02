@@ -2,9 +2,32 @@
 // number in the array. You may assume that the array has at least three numbers in it.
 // Difficulty: medium.
 
+/*
 function third_greatest(nums) {
   var thirdGreatest = nums.sort(function(a,b) {return b - a})[2];
   return thirdGreatest;
+}
+*/
+
+//Another way to solve this problem is shown below. This solution taught me a different way to roll through an array
+function third_greatest(nums) {
+  var third = null, second = null, first = null;
+  var counter = 0;
+  while(counter < nums.length) {
+  	var value = nums[counter];
+  	if(first === null || value > first) {
+  		third = second;
+  		second = first;
+  		first = nums[counter];
+  	} else if(second === null || value > second) {
+  		third = second;
+  		second = nums[counter];
+  	} else if(third === null || value > third) {
+  		third = nums[counter];
+  	}
+  	counter++;
+  }
+  return third;
 }
 
 // These are tests to check that your code is working. After writing your solution, they should all print true.
