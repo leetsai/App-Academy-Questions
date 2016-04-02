@@ -1,0 +1,33 @@
+// Write a method that takes in a string. Your method should return the most common 
+// letter in the array, and a count of how many times it appears.
+// Difficulty: medium.
+
+function most_common_letter(string) {
+  var most_common_letter = null, most_common_count = null;
+  var letter = "";
+  var index1 = 0;
+  while(index1 < string.length) {
+    letter = string[index1];
+    var index2 = 0, count = 0;
+    while(index2 < string.length) {
+      if(string[index2] === letter) {
+        count++;
+      }
+      index2++;
+    }
+    if((count > most_common_count) || (most_common_count === null)){
+      most_common_letter = letter;
+      most_common_count = count;
+    }
+    index1++;
+  }
+  return [most_common_letter, most_common_count];
+}
+
+// These are tests to check that your code is working. After writing your solution, they should all print the array.
+// I modified the checks to console log the array instead of comparing two objects
+
+console.log("===============================================");
+    console.log(most_common_letter("abca"));
+    console.log(most_common_letter('abbab'));
+console.log("===============================================");
