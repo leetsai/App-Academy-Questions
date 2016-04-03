@@ -1,0 +1,39 @@
+// Write a method that returns the `n`th prime number. Recall that only numbers greater than 1 can be prime.
+
+// Difficulty: medium.
+
+// You may use our `is_prime?` solution.
+
+function is_prime(number) {
+  if(number <= 1) {
+    return false;
+  } 
+  for(var i = number - 1; i > 1; i--) {
+  	if(number % i === 0) {
+  	  return false;
+  	}
+  }
+  return true;
+}
+
+function nth_prime(n) {
+  var count = 0, number = 2;
+  while(count < n) {
+    if(is_prime(number)) {
+      count++;
+    }
+    number++;
+  }
+  return number - 1;
+  //need to take out 1 because number iterated one extra time;
+}
+
+// These are tests to check that your code is working. After writing your solution, they should all print true.
+
+console.log("===============================================");
+    console.log(nth_prime(1) === 2);
+    console.log(nth_prime(2) === 3);
+    console.log(nth_prime(3) === 5);
+    console.log(nth_prime(4) === 7);
+    console.log(nth_prime(5) === 11);
+console.log("===============================================");
