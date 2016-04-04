@@ -1,0 +1,24 @@
+// Write a method that takes in two numbers. Return the greatest integer that evenly divides both numbers. You may wish to use the
+// `%` modulo operation.
+
+// Difficulty: medium.
+
+function greatest_common_factor(number1, number2) {
+  var origNumber1 = number1, answer = 1;
+  while(number1 > 0) {
+  	if(number2 % number1 === 0 && origNumber1 % number1 ===0) {
+  	 answer = number1;
+  	 return answer;
+  	}
+  	number1--;
+  }
+  return answer;
+}
+
+// These are tests to check that your code is working. After writing your solution, they should all print true.
+
+console.log("===============================================");
+    console.log(greatest_common_factor(3, 9) == 3);
+    console.log(greatest_common_factor(16, 24) == 8);
+    console.log(greatest_common_factor(33, 341) == 11);
+console.log("===============================================");
