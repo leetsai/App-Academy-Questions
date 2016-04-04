@@ -1,0 +1,9 @@
+// Write a function disemvowel(string), which takes in a string, and returns that string with all the vowels removed. Treat "y" as a consonant.
+
+function disemvowel(string) {
+  return string.replace(/[a,e,i,o,u]/gi, "");
+}
+
+console.log(disemvowel("foobar")) // => "fbr"
+console.log(disemvowel("ruby")) // => "rby"
+console.log(disemvowel("aeiou")) // => ""
