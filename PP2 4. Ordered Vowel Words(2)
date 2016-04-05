@@ -1,0 +1,41 @@
+// Write a method, `ordered_vowel_words(str)` that takes a string of lowercase words and returns a string with just the words containing
+// all their vowels (excluding "y") in alphabetical order. Vowels may be repeated (`"afoot"` is an ordered vowel word).
+
+// You will probably want a helper method, `ordered_vowel_word?(word)` which returns true/false if a word's vowels are ordered.
+
+// Difficulty: 2/5
+
+function ordered_vowel_word(word) {
+  var newStr = word.replace(/[^a,e,i,o,u]/gi, "");
+  for(var i = 0; i <= newStr.length - 1; i++) {
+    if((newStr[i] > newStr[i + 1])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function ordered_vowel_words(str) {
+  var words = str.split(" ");
+  var finalArr = [];
+  for(var j = 0; j < words.length; j++) {
+    if(ordered_vowel_word(words[j])) {
+      finalArr.push(words[j]);
+    }
+  }
+  return finalArr.join(" ");
+}
+
+console.log("===============================================");
+    console.log(ordered_vowel_words("amends") === "amends");
+    console.log(ordered_vowel_words("complicated") === "");
+    console.log(ordered_vowel_words("afoot") === "afoot");
+    console.log(ordered_vowel_words("ham") === "ham");
+    console.log(ordered_vowel_words("crypt") === "crypt");
+    console.log(ordered_vowel_words("o") === "o");
+    console.log(ordered_vowel_words("tamely") === "tamely");
+    
+    var phrase = "this is a test of the vowel ordering system";
+    var result = "this is a test of the system";
+    console.log(ordered_vowel_words(phrase) === result);
+console.log("===============================================");
