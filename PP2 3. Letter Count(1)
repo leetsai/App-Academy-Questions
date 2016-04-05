@@ -1,0 +1,28 @@
+// Write a function, `letter_count(str)` that takes a string and returns a hash mapping each letter to its frequency. Do not include spaces.
+
+// Difficulty: 1/5
+
+function count_character(str) {
+	for(var i = 0; i < str.length; i++) {
+		
+	}
+}
+
+function letter_count(str) {
+  var obj = {}, newStr = str.replace(/[^a-z]/gi,"");
+  for(var i = 0; i < newStr.length; i++) {
+    var character = newStr[i];
+    if(obj[character]) {
+      obj[character]++;	
+    } else {
+    	obj[character] = 1;
+    }
+  }
+  return obj;
+}
+
+console.log("===============================================");
+    console.log(letter_count("cat")); // == {"c" => 1, "a" => 1, "t" => 1});
+    console.log(letter_count("moon")); // == {"m" => 1, "o" => 2,"n" => 1});
+    console.log(letter_count("cats are fun")); // == {"a" => 2, "c" => 1, "e"=> 1, "f" => 1, "n" => 1, "r" => 1, "s" => 1, "t" => 1, "u" => 1});
+console.log("===============================================");
