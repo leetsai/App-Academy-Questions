@@ -1,0 +1,35 @@
+// Write a function, `no_repeats(year_start, year_end)`, which takes a range of years and console.log those years which do not have any repeated digits.;
+
+// You should probably write a helper function, `no_repeat(year)` which returns true/false if a single year doesn't have a repeat.
+
+// Difficulty: 1/5
+
+function noRepeat(year) {
+  var stringIt = String(year);
+  var arr = stringIt.split("");
+  for(var i = 0; i < arr.length; i++) {
+    for(var j = 0; j < arr.length; j++) {
+      if(i !== j && arr[i] === arr[j]) {
+        return false;
+      }
+    }
+  }
+  return true
+}
+
+
+function no_repeats(year_start, year_end) {
+  var newArr = [];
+  for(var i = year_start; i <= year_end; i++) {
+  	if(noRepeat(i)) {
+  		newArr.push(i);
+  	}
+  }
+  return newArr;
+}
+
+console.log("===============================================");
+    console.log(no_repeats(1234, 1234)); // ==> [1234]
+    console.log(no_repeats(1123, 1123)); // ==> []
+    console.log(no_repeats(1980, 1987)); // ==> [1980,1982,1983,1984,1985,1986,1987]
+console.log("===============================================");
