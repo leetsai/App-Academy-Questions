@@ -46,7 +46,19 @@ function morse_encode(str) {
 		}
   }
   return arr.join(" ");
-}
+}  
+
+// function morse_encode(str) {
+//   var arr = str.split(""), newArr = [];
+//   arr.map(function(key) {
+//   	if(morse.hasOwnProperty(key)) {
+//   		newArr.push(morse[key]);
+//   	} else {
+//   		newArr.push("");
+//   	}
+//   });
+//   return newArr.join(" ");
+// }
 
 console.log("===============================================");
     console.log(morse_encode("q") == "--.-");
