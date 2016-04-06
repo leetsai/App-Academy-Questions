@@ -13,7 +13,7 @@ function rec_intersection(rect1, rect2) {
   var x2 = Math.min(rect1[1][0], rect2[1][0]);
   var y2 = Math.min(rect1[1][1], rect2[1][1]);
   
-  if(Math.max(rect1[0][0], rect1[1][0]) < Math.min(rect2[0][0], rect2[1][0])) {
+  if((Math.max(rect1[0][0], rect1[1][0]) < Math.min(rect2[0][0], rect2[1][0])) || (Math.max(rect1[0][1], rect1[1][1]) < Math.min(rect2[0][1], rect2[1][1]))) {
   	return null;
   }
   
