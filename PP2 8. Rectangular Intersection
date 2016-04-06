@@ -8,12 +8,21 @@
 // Difficulty: 4/5
 
 function rec_intersection(rect1, rect2) {
-
-}
+  var x1 = Math.max(rect1[0][0], rect2[0][0]);
+  var y1 = Math.max(rect1[0][1], rect2[0][1]);
+  var x2 = Math.min(rect1[1][0], rect2[1][0]);
+  var y2 = Math.min(rect1[1][1], rect2[1][1]);
+  
+  if(Math.max(rect1[0][0], rect1[1][0]) < Math.min(rect2[0][0], rect2[1][0])) {
+  	return null;
+  }
+  
+  return [[x1, y1],[x2,y2]];
+  }
 
 console.log("===============================================");
-    console.log(rec_intersection([[0, 0], [2, 1]], [[1, 0], [3, 1]]) == [[1, 0], [2, 1]]);
-    console.log(rec_intersection([[1, 1], [2, 2]], [[0, 0], [5, 5]]) == [[1, 1], [2, 2]]);
-    console.log(rec_intersection([[1, 1], [2, 2]], [[4, 4], [5, 5]]) == null);
-    console.log(rec_intersection([[1, 1], [5, 4]], [[2, 2], [3, 5]]) == [[2, 2], [3, 4]]);
+    console.log(rec_intersection([[0, 0], [2, 1]], [[1, 0], [3, 1]]));
+    console.log(rec_intersection([[1, 1], [2, 2]], [[0, 0], [5, 5]]));
+    console.log(rec_intersection([[1, 1], [2, 2]], [[4, 4], [5, 5]]));
+    console.log(rec_intersection([[1, 1], [5, 4]], [[2, 2], [3, 5]]));
 console.log("===============================================");
