@@ -1,0 +1,27 @@
+// Write a function `bubble_sort(arr)` which will sort an array of integers using the "bubble sort" methodology. 
+// (http://en.wikipedia.org/wiki/Bubble_sort)
+
+// Difficulty: 3/5
+
+function bubble_sort(arr) {
+  var i = 0;
+  var xDown = 1;
+  
+	while(arr[i] > arr[i + 1]) {
+		var temp = arr[i];
+  	arr[i] = arr[i + 1];
+  	arr[i + 1] = temp;
+ 		i++;
+		if(i === arr.length - xDown) {
+			i = 0;
+			xDown++;
+		}
+  }
+  return arr;
+}
+
+console.log("===============================================");
+    console.log(bubble_sort([])); // ==> []
+    console.log(bubble_sort([1])); // ==> [1]
+    console.log(bubble_sort([5, 4, 3, 2, 1])); // ==> [1, 2, 3, 4, 5]
+console.log("===============================================");
