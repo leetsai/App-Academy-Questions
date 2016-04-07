@@ -3,25 +3,46 @@
 
 // Difficulty: 3/5
 
-function bubble_sort(arr) {
-  var i = 0;
-  var xDown = 1;
+// function bubble_sort(arr) {
+//   var i = 0;
+//   var xDown = 1;
+//   var status = false;
   
-	while(arr[i] > arr[i + 1]) {
-		var temp = arr[i];
-  	arr[i] = arr[i + 1];
-  	arr[i + 1] = temp;
- 		i++;
-		if(i === arr.length - xDown) {
-			i = 0;
-			xDown++;
-		}
+// 	while(!status) {
+// 		status = true;
+// 		var temp = arr[i];
+//   	if(arr[i] > arr[i + 1]) {
+// 	  	arr[i] = arr[i + 1];
+// 	  	arr[i + 1] = temp;
+// 	 		i++;
+// 	 		status = false;
+//   	}
+// 		if(i === arr.length - xDown) {
+// 			i = 0;
+// 			xDown++;
+// 		}
+//   }
+//   return arr;
+// }
+
+function bubble_sort(arr) {
+  var sorted = false;
+  while(!sorted) {
+    sorted = true;
+    for(var i = 0; i < arr.length - 1; i++) {
+      if(arr[i] > arr[i + 1]) {
+        var temp = arr[i + 1];
+        arr[i + 1] = arr[i];
+        arr[i] = temp;
+        sorted = false;
+      }
+    }
   }
   return arr;
 }
 
 console.log("===============================================");
-    console.log(bubble_sort([])); // ==> []
-    console.log(bubble_sort([1])); // ==> [1]
-    console.log(bubble_sort([5, 4, 3, 2, 1])); // ==> [1, 2, 3, 4, 5]
+    // console.log(bubble_sort([])); // ==> []
+    // console.log(bubble_sort([1])); // ==> [1]
+    console.log(bubble_sort([21, 4, 30, 3, 20])); // ==> [1, 2, 3, 4, 5]
 console.log("===============================================");
